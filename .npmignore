@@ -1,0 +1,12 @@
+src/
+*.test.ts
+*.test.js
+jest.config.js
+tsconfig.json
+.prettierrc
+.prettierignore
+.gitignore
+coverage/
+*.tsbuildinfo
+.DS_Store
+*.log

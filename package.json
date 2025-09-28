@@ -1,0 +1,32 @@
+{
+  "name": "@imagework/fx-datamodel",
+  "version": "1.0.0",
+  "description": "TypeScript data model and utilities for image effects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "checks": "npm run test && npm run format",
+    "build": "npm run clean && npm run checks && npm run tsc",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json}\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.5.2",
+    "jest": "^30.1.3",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.2",
+    "typescript": "^5.9.2"
+  },
+  "files": [
+    "dist"
+  ]
+}
