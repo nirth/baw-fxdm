@@ -3,8 +3,7 @@ import { AlphaEffectValue } from './alpha'
 import { EffectConfig, EffectExecutionParams, LoopedDuration } from './core'
 import { ApplyEffectExecutionParamsAtFrame } from '../animation'
 
-export type GrainEffectConfig = EffectConfig & {
-  duration: LoopedDuration
+export type GrainEffectConfig = EffectConfig<LoopedDuration> & {
   grainOpacity: AlphaEffectValue
   size: Integer
 }

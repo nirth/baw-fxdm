@@ -1,10 +1,10 @@
-import { EffectConfig } from './effects/core'
+import { EffectConfigs } from './effects/core'
 
 export type AnimationPipelineSet = {
   name: string
   subDirectory: string
   animationDuration: string
-  effects: EffectConfig[]
+  effects: EffectConfigs
 }
 
 export type AnimationPipelineConfig = {

@@ -7,6 +7,7 @@ export enum Direction {
 }
 
 export type ImageDetails = {
+  name: string
   x: number
   y: number
   width: number
@@ -25,7 +26,17 @@ export interface Animation<EepType extends EffectExecutionParams> {
   applyEffectAtFrame: (frame: Integer) => Image
 }
 
-// export type ComputeEffectExecutionParams<ConfigType extends EffectConfig> = (
-//   imgDetails: ImageDetails,
-//   effect: ConfigType
-// ) => EffectExecutionParams
+export enum BlendMode {
+  Normal = 'normal',
+  Multiply = 'multiply',
+  Screen = 'screen',
+  Overlay = 'overlay',
+  Darken = 'darken',
+  Lighten = 'lighten',
+  ColorDodge = 'color-dodge',
+  ColorBurn = 'color-burn',
+  HardLight = 'hard-light',
+  SoftLight = 'soft-light',
+  Difference = 'difference',
+  Exclusion = 'exclusion',
+}

@@ -1,20 +1,22 @@
 import { ApplyEffectExecutionParamsAtFrame } from '../animation'
 import { EasingKind } from '../easing'
-import { EffectConfig, EffectExecutionParams, FiniteDuration, LoopedDuration } from './core'
+import {
+  EffectConfig,
+  EffectDuration,
+  EffectExecutionParams,
+  FiniteDuration,
+  LoopedDuration,
+} from './core'
 
-export type AlphaEffectConfig = EffectConfig & {
+export type AlphaEffectConfig<DurationType extends EffectDuration> = EffectConfig<DurationType> & {
   from: number
   to: number
   easingKind: EasingKind
 }
 
-export type FadeEffectConfig = AlphaEffectConfig & {
-  duration: FiniteDuration
-}
+export type FadeEffectConfig = AlphaEffectConfig<FiniteDuration>
 
-export type PulseEffectConfig = AlphaEffectConfig & {
-  duration: LoopedDuration
-}
+export type PulseEffectConfig = AlphaEffectConfig<LoopedDuration>
 
 export type EmptyAlphaEffectValue = -1
 export type NonEmptyAlphaEffectValue = number

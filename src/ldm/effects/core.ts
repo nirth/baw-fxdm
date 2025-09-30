@@ -26,14 +26,15 @@ export type FiniteDuration = {
 
 export type EffectDuration = Static | LoopedDuration | FiniteDuration
 
-export type EffectConfig = {
-  duration: EffectDuration
+export type EffectConfig<DurationType extends EffectDuration> = {
+  duration: DurationType
 }
+
+export type EffectConfigs = EffectConfig<EffectDuration>[]
 
 export type EffectExecutionParams = {}
 
-export type ComputeEffectExecutionParamsAtFrame<EcType extends EffectConfig> = (
-  imgDetails: ImageDetails,
-  effectConfig: EcType,
-  frame: Integer
-) => EffectExecutionParams
+export type ComputeEffectExecutionParamsAtFrame<
+  DurationType extends EffectDuration,
+  EcType extends EffectConfig<DurationType>,
+> = (imgDetails: ImageDetails, effectConfig: EcType, frame: Integer) => EffectExecutionParams

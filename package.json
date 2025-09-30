@@ -1,6 +1,6 @@
 {
-  "name": "n",
-  "version": "1.0.2",
+  "name": "@baw/fxdm",
+  "version": "1.1.0",
   "description": "TypeScript data model and utilities for image effects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
