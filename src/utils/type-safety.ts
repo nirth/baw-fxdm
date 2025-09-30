@@ -1,3 +1,4 @@
+import { Integer } from '../ldm'
 import { AlphaEffectValue, EmptyAlphaEffectValue, NonEmptyAlphaEffectValue } from '../ldm/effects'
 
 export const isEmptyAlphaValue = (alpha: AlphaEffectValue): alpha is EmptyAlphaEffectValue => {
@@ -12,4 +13,10 @@ export const isNonEmptyAlphaValue = (
 
 export const isAlphaValue = (candidate: any): candidate is AlphaEffectValue => {
   return isEmptyAlphaValue(candidate) || isNonEmptyAlphaValue(candidate)
+}
+
+export const isIntegerValue = (candidate: number): asserts candidate is Integer => {
+  if (!Number.isInteger(candidate)) {
+    throw new Error(`Expected integer, got ${candidate}`)
+  }
 }
