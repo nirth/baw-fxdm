@@ -1,12 +1,19 @@
-import { Direction } from 'readline'
-import { Integer } from '../core'
+import { Direction, Integer } from '../core'
 import { EasingKind } from '../easing'
-import { EffectConfig, FiniteDuration } from './core'
+import { EffectConfig, EffectExecutionParams, FiniteDuration } from './core'
 
 export type DistortionBandEffectConfig = EffectConfig & {
   duration: FiniteDuration
+  direction: Direction
   motionEasingKind: EasingKind
-  motionDirection: Direction
   canvasSize: Integer
   bandSize: Integer
+}
+
+export type DistortionBandEffectExecutionParams = EffectExecutionParams & {
+  direction: Direction
+  position: Integer
+  size: Integer
+  distortionOffset: number
+  intensity: number
 }
