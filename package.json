@@ -1,6 +1,6 @@
 {
-  "name": "@imagework/fx-datamodel",
-  "version": "1.0.0",
+  "name": "n",
+  "version": "1.0.2",
   "description": "TypeScript data model and utilities for image effects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
