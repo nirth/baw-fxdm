@@ -1,4 +1,8 @@
-import { isEmptyAlphaValue, isNonEmptyAlphaValue, isAlphaValue } from './type-safety'
+import {
+  isEmptyAlphaValue,
+  isNonEmptyAlphaValue,
+  isAlphaValue,
+} from './type-safety'
 
 describe('Alpha value type guards', () => {
   describe('isEmptyAlphaValue', () => {

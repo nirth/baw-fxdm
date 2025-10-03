@@ -1,7 +1,13 @@
 import { Integer } from '../ldm'
-import { AlphaEffectValue, EmptyAlphaEffectValue, NonEmptyAlphaEffectValue } from '../ldm/effects'
+import {
+  AlphaEffectValue,
+  EmptyAlphaEffectValue,
+  NonEmptyAlphaEffectValue,
+} from '../ldm/effects'
 
-export const isEmptyAlphaValue = (alpha: AlphaEffectValue): alpha is EmptyAlphaEffectValue => {
+export const isEmptyAlphaValue = (
+  alpha: AlphaEffectValue
+): alpha is EmptyAlphaEffectValue => {
   return alpha === -1
 }
 
@@ -11,12 +17,20 @@ export const isNonEmptyAlphaValue = (
   return alpha >= 0 && alpha <= 1
 }
 
-export const isAlphaValue = (candidate: any): candidate is AlphaEffectValue => {
-  return isEmptyAlphaValue(candidate) || isNonEmptyAlphaValue(candidate)
+export const isAlphaValue = (
+  candidate: any
+): candidate is AlphaEffectValue => {
+  return (
+    isEmptyAlphaValue(candidate) || isNonEmptyAlphaValue(candidate)
+  )
 }
 
-export const isIntegerValue = (candidate: number): asserts candidate is Integer => {
+export const isIntegerValue = (
+  candidate: number
+): candidate is Integer => {
   if (!Number.isInteger(candidate)) {
     throw new Error(`Expected integer, got ${candidate}`)
   }
+
+  return Number.isInteger(candidate)
 }

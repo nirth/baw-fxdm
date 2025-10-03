@@ -1,4 +1,6 @@
-import { ImageDetails, Integer } from '../core'
+import { EffectConfig } from '../configs'
+import { Integer } from '../core'
+import { ImageDetails } from '../images'
 
 export enum DurationKind {
   Static = 'static',
@@ -26,15 +28,13 @@ export type FiniteDuration = {
 
 export type EffectDuration = Static | LoopedDuration | FiniteDuration
 
-export type EffectConfig<DurationType extends EffectDuration> = {
-  duration: DurationType
-}
-
-export type EffectConfigs = EffectConfig<EffectDuration>[]
-
 export type EffectExecutionParams = {}
 
 export type ComputeEffectExecutionParamsAtFrame<
   DurationType extends EffectDuration,
   EcType extends EffectConfig<DurationType>,
-> = (imgDetails: ImageDetails, effectConfig: EcType, frame: Integer) => EffectExecutionParams
+> = (
+  imgDetails: ImageDetails,
+  effectConfig: EcType,
+  frame: Integer
+) => EffectExecutionParams

@@ -13,7 +13,10 @@ export enum EasingKind {
 
 export type EasingValue = number
 
-export type Ease = (duration: Integer, currentFrame: Integer) => EasingValue
+export type Ease = (
+  duration: Integer,
+  currentFrame: Integer
+) => EasingValue
 export type ResolveEasingFunction = (kind: EasingKind) => Ease
 
 export type ComputeCurrentEasingValue = (

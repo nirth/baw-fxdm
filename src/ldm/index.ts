@@ -1,5 +1,7 @@
 export * from './animation'
+export * from './configs'
 export * from './core'
 export * from './effects'
+export * from './images'
 export * from './filesystem'
 export * from './easing'

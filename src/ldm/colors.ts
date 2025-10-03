@@ -1,4 +1,5 @@
-export type RgbaColor = `rgba(${number}, ${number}, ${number}, ${number})`
+export type RgbaColor =
+  `rgba(${number}, ${number}, ${number}, ${number})`
 
 export enum PsychedelicColors {
   // Pink variants

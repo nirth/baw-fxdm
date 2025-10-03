@@ -1,29 +1,15 @@
-import { EffectExecutionParams } from './effects'
+import { ApplyEffectExecutionParamsAtFrame } from './animation'
+import { EffectConfig } from './configs'
+import {
+  ComputeEffectExecutionParamsAtFrame,
+  EffectDuration,
+  EffectExecutionParams,
+} from './effects'
 
 export type Integer = number
 export enum Direction {
   Horizontal = 'horizontal',
   Vertical = 'vertical',
-}
-
-export type ImageDetails = {
-  name: string
-  x: number
-  y: number
-  width: number
-  height: number
-}
-
-export type Image = ImageDetails & {
-  buffer: Buffer
-}
-
-export interface Animation<EepType extends EffectExecutionParams> {
-  frames: Image[]
-  effectExecutionParams: EepType[]
-  timelineDuration: Integer
-
-  applyEffectAtFrame: (frame: Integer) => Image
 }
 
 export enum BlendMode {
@@ -39,4 +25,20 @@ export enum BlendMode {
   SoftLight = 'soft-light',
   Difference = 'difference',
   Exclusion = 'exclusion',
+}
+
+export type EffectParamComputerMap<
+  DurationType extends EffectDuration,
+  EcType extends EffectConfig<DurationType>,
+> = {
+  [effectName: string]: ComputeEffectExecutionParamsAtFrame<
+    DurationType,
+    EcType
+  >
+}
+
+export type EffectParamApplicatorMap<
+  EepType extends EffectExecutionParams,
+> = {
+  [animationName: string]: ApplyEffectExecutionParamsAtFrame<EepType>
 }
